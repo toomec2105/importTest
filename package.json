@@ -1,0 +1,25 @@
+{
+  "name": "importtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "babel": "npx babel src --out-dir transpiledByBabel --presets=@babel/env",
+    "index": "node ./transpiledByBabel/index.js",
+    "main": "node ./transpiledByBabel/main.js",
+    "dev": "npm run babel && npm run index && npm run main",
+    "start": "npx parcel build src/index.js --target node && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "npm": "^6.13.6"
+  }
+}
